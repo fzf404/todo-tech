@@ -1,0 +1,77 @@
+<!--
+ * @Author: fzf404
+ * @Date: 2022-01-23 21:00:05
+ * @LastEditTime: 2022-02-08 17:11:28
+ * @Description: 修改代办
+-->
+<div class="modal fade" id="updateModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- 模态框头部 -->
+      <div class="modal-header">
+        <h4 class="modal-title">更新代办</h4>
+        <button id="closeUpdate" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- 模态框内容 -->
+      <div class="modal-body">
+        <!-- 标题 -->
+        <div class="mb-3">
+          <label for="updateTitle" class="form-label">标题</label>
+          <input type="text" class="form-control" id="updateTitle" />
+        </div>
+        <!-- 详情 -->
+        <div class="mb-3">
+          <label for="updateContent" class="form-label">详情</label>
+          <textarea type="text" class="form-control" id="updateContent" rows="4"></textarea>
+        </div>
+        <!-- 标签 -->
+        <div class="mb-3" id="updateTags">
+          <label for="updateTag" class="form-label">标签</label>
+          <div class="d-flex flex-wrap">
+            <input type="text" class="form-control m-1" id="updateTag" style="max-width: 100px" />
+            <span class="m-1 btn btn-primary" id="updateTagButton">
+              <svg viewBox="0 0 1024 1024" width="24">
+                <path
+                  d="M512 1024C229.248 1024 0 794.752 0 512S229.248 0 512 0s512 229.248 512 512-229.248 512-512 512z m-114.176-310.954667a53.333333 53.333333 0 0 0 75.434667 0l323.328-323.328a53.333333 53.333333 0 1 0-75.434667-75.434666l-287.914667 283.306666-128.853333-128.853333a53.333333 53.333333 0 1 0-75.434667 75.434667l168.874667 168.874666z"
+                  fill="#ffffff"
+                ></path>
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- 标签动效 -->
+      <script>
+        // 增加标签事件
+        function updateTag() {
+          if ($('#updateTag').val() !== '') {
+            // 增加标签
+            $('#updateTag').before(
+              `<button class="m-1 btn btn-outline-success tagItem">${$('#updateTag').val()}</button>`
+            )
+            // 清空输入
+            $('#updateTag').val('')
+          }
+        }
+        // 事件委托 - 删除标签
+        $('#updateTags').on('click', 'button', function () {
+          $(this).remove()
+        })
+        // 监听回车事件
+        $('#updateTag').keyup(function (event) {
+          if (event.keyCode == 13) {
+            updateTag()
+          }
+        })
+        // 监听点击事件
+        $('#updateTagButton').click(updateTag)
+      </script>
+
+      <!-- 模态框底部 -->
+      <div class="modal-footer">
+        <button class="btn btn-success" onclick="updateTodo()">更新</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<!--
+ * @Author: fzf404
+ * @Date: 2022-01-23 18:29:17
+ * @LastEditTime: 2022-01-24 16:25:00
+ * @Description: 登录模块
+-->
+<div class="modal  fade" id="loginModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+ 
+      <!-- 模态框头部 -->
+      <div class="modal-header">
+        <h4 class="modal-title">登录</h4>
+        <button class="btn-close" id="closeLogin" data-bs-dismiss="modal"></button>
+      </div>
+ 
+      <!-- 模态框内容 -->
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="loginUsername" class="form-label">用户名 / 邮箱</label>
+          <input name="username" type="text" class="form-control" id="loginUsername">
+        </div>
+        <div class="mb-3">
+          <label for="loginPassword" class="form-label">密码</label>
+          <input name="password" type="password" class="form-control" id="loginPassword"></input>
+        </div>
+      </div>
+ 
+      <!-- 模态框底部 -->
+      <div class="modal-footer">
+        <button class="btn btn-primary" onclick="login()">登录</button>
+      </div>
+ 
+    </div>
+  </div>
+</div>

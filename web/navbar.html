@@ -1,0 +1,74 @@
+<!--
+ * @Author: fzf404
+ * @Date: 2022-01-23 21:14:19
+ * @LastEditTime: 2022-01-25 15:12:53
+ * @Description: 导航栏
+-->
+<div class="p-1 bg-dark text-white">
+  <div class="container" style="max-width: 1000px">
+    <div class="d-flex flex-wrap align-items-center justify-content-center">
+      <a href="/" class="d-flex align-items-center text-white text-decoration-none">
+        <!-- Logo -->
+        <svg class="mx-3" viewBox="0 0 1024 1024" width="50">
+          <path
+            d="M232.533333 345.6l324.266667 320c17.066667 17.066667 17.066667 42.666667 0 59.733333l-117.333333 115.2c-17.066667 17.066667-42.666667 17.066667-59.733334 0l-324.266666-320c-17.066667-17.066667-17.066667-42.666667 0-59.733333l117.333333-115.2c14.933333-17.066667 42.666667-17.066667 59.733333 0z"
+            fill="#185ABD"
+          ></path>
+          <path
+            d="M968.533333 315.733333L439.466667 840.533333c-17.066667 17.066667-42.666667 17.066667-59.733334 0L262.4 725.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333L791.466667 140.8c17.066667-17.066667 42.666667-17.066667 59.733333 0l117.333333 115.2c17.066667 17.066667 17.066667 42.666667 0 59.733333z"
+            fill="#41A5EE"
+          ></path>
+        </svg>
+        <!-- 网站说明 -->
+        <span class="fs-3">TodoList</span>
+      </a>
+      <!-- 占位 -->
+      <div class="flex-md-fill"></div>
+      <!-- 搜索框 -->
+      <div class="m-3 col-8 col-sm-auto">
+        <input
+          type="text"
+          id="searchTodo"
+          class="form-control form-control-dark"
+          placeholder="搜索"
+          aria-label="Search"
+          autocomplete="off"
+        />
+      </div>
+      <script>
+        // 监听回车搜索
+        $('#searchTodo').keyup(function (event) {
+          if (event.keyCode == 13) {
+            searchTodo()
+          }
+        })
+      </script>
+      <!-- 登录注册按钮 -->
+      <div class="m-2">
+        <div class="noLogin">
+          <button
+            id="loginButton"
+            class="btn btn-outline-light me-2"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+          >
+            登录
+          </button>
+          <button id="registButton" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#registModal">
+            注册
+          </button>
+        </div>
+        <div class="isLogin visually-hidden">
+          <img
+            src="https://www.fzf404.top/public/avatar.jpg"
+            alt="mdo"
+            width="40"
+            height="40"
+            class="me-2 rounded-circle"
+          />
+          <button class="btn btn-outline-light" onclick="logOut()">登出</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
