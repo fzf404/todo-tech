@@ -5,8 +5,8 @@
  * @Description: ajax 请求
  */
 
-// const BASE_URL = 'http://127.0.0.1:8080'
-const BASE_URL = '/api/v2'
+const BASE_URL = 'http://127.0.0.1:8080'
+
 // 数据
 let todo_map = new Map() // 存储 TODO 信息
 let update_tid = 0 // 修改操作时记录 tid 值

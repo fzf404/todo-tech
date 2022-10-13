@@ -1,5 +1,5 @@
 [common]
-  host="http://remote.fzf404.top" # host
+  host="http://todo.fzf404.art" # host
   port = 8080 # 端口
   
 [jwt]
@@ -9,10 +9,10 @@
 
 [mysql]
   username = "root"
-  password = "fzf404"
+  password = "1234"
   host = "127.0.0.1"
   port = 3306
-  database = "TodoList"
+  database = "test"
   config = "charset=utf8&parseTime=true"
 
 [todo]
